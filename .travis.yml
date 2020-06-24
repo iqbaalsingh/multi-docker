@@ -6,7 +6,7 @@ before install:
     - docker build -t iqbaalsingh/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-    docker run iqbaalsingh/react-test -- --coverage
+    - docker run iqbaalsingh/react-test -- --coverage
 
 after_success:
     - docker build -t iqbaalsingh/multi-client ./client
@@ -20,7 +20,7 @@ after_success:
     - docker push iqbaalsingh/multi-nginx
     - docker push iqbaalsingh/multi-server
     - docker push iqbaalsingh/multi-worker
-    
+
 
 
 
