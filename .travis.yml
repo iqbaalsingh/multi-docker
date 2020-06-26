@@ -21,6 +21,17 @@ after_success:
     - docker push iqbaalsingh/multi-server
     - docker push iqbaalsingh/multi-worker
 
+deploy:
+    provider: azure_web_apps
+    username: azure_deployment_user
+    password: azure_deployment_password
+    site: azdocker-complex\azdockerreactFTP
+    slot: azdocker-complex
+    on:
+        branch: master
+
+
+
 
 
 
